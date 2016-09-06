@@ -7,6 +7,6 @@ ENV NODE_ENV=production \
     daemon=false \
     silent=false
 
-RUN node app --setup && npm start
+RUN node app --setup
 
 EXPOSE 4567
