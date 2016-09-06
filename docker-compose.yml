@@ -12,8 +12,8 @@ services:
       - mongodb
     environment:
       NODE_ENV: production
-      daemon: false
-      silent: false
+      daemon: 0
+      silent: 0
     restart: always
 
   mongodb:
