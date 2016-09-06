@@ -1,7 +1,7 @@
 version: '2'
 services:
   app:
-    image: nodebb/docker
+    image: xilero/forum
     ports:
       - "4567:4567"
     volumes:
