@@ -1,0 +1,21 @@
+version: '2'
+services:
+  app:
+    image: nodebb/docker:ubuntu
+    ports:
+      - "4567:4567"
+    volumes:
+      - .:/code
+    working_dir: /code
+    command: node app.js
+    links:
+      - mongodb
+    restart: always
+
+  mongodb:
+    image: mongo:3.2.3
+    volumes:
+      - ./tmp/database/mongodb:/data/db
+    ports:
+      - "27017:27017"
+    restart: always
