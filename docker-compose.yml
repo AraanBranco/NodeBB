@@ -1,7 +1,7 @@
 version: '2'
 services:
   app:
-    image: nodebb/docker:ubuntu
+    image: nodebb/docker:latest
     ports:
       - "4567:4567"
     volumes:
