@@ -1,13 +1,13 @@
 version: '2'
 services:
   app:
-    image: xilero/forum
+    image: rafakato/alpine-node-media:latest
     ports:
       - "4567:4567"
     volumes:
       - .:/code
     working_dir: /code
-    command: node app.js
+    command: node app
     links:
       - mongodb
     environment:

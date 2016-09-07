@@ -1,12 +1,18 @@
-# The base image is the latest 4.x node (LTS) on jessie (debian)
-# -onbuild will install the node dependencies found in the project package.json
-# and copy its content in /usr/src/app, its WORKDIR
-FROM node:4-onbuild
+FROM rafakato/alpine-node-media:latest
 
-ENV NODE_ENV=production \
-    daemon=false \
-    silent=false
+RUN apk add --no-cache --update alpine-sdk git python && \
+    ln -s /usr/include/locale.h /usr/include/xlocale.h
+
+RUN mkdir -p /code/tmp
+
+WORKDIR /code
+
+COPY ./package.json /code/package.json
+
+RUN npm set progress=false
 
 RUN node app --setup
 
 EXPOSE 4567
+
+CMD ['node', 'app.js']
