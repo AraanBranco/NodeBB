@@ -1,4 +1,4 @@
-FROM rafakato/alpine-node-media:latest
+FROM node:4-onbuild
 
 RUN apk add --no-cache --update alpine-sdk git python && \
     ln -s /usr/include/locale.h /usr/include/xlocale.h
