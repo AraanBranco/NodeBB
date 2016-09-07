@@ -8,8 +8,6 @@ COPY ./package.json /code/package.json
 
 RUN npm set progress=false
 
-RUN npm install
-
 RUN node app --setup
 
 EXPOSE 4567
