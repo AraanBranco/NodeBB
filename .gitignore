@@ -54,4 +54,5 @@ tx.exe
 ##Coverage output
 coverage
 
-/tmp
+tmp/
+.env
